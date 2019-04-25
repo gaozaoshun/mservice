@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gaozaoshun/config-repo
+          username: 739178184@qq.com
+          password: 13556457068+qq
+          basedir: ./gitconfig
+  rabbitmq:
+    username: root
+    password: 123456
+    host: 127.0.0.1
+    port: 5672
+server:
+  port: 30000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10000/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
