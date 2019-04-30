@@ -8,13 +8,22 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface StreamClient {
 
-    String INPUT = "INPUT";
-    String OUTPUT = "OUTPUT";
+    String INPUT = "input";
+    String OUTPUT = "output";
+
+    String INPUT_ORDER = "inputOrder";
+    String OUTPUT_ORDER = "outputOrder";
 
     @Input(INPUT)
     SubscribableChannel input();
 
     @Output(OUTPUT)
     MessageChannel output();
+
+    @Input(INPUT_ORDER)
+    SubscribableChannel inputOrder();
+
+    @Output(OUTPUT_ORDER)
+    MessageChannel outputOrder();
 
 }

@@ -1,6 +1,5 @@
 package org.gfs.order.server.controller;
 
-import org.gfs.order.server.dto.OrderDto;
 import org.gfs.order.server.message.StreamClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
@@ -16,9 +15,7 @@ public class StreamController {
 
     @GetMapping("stream")
     public String sendMsg(){
-        OrderDto orderDto = new OrderDto();
-        orderDto.setBuyerName("AAA");
-        streamClient.output().send(MessageBuilder.withPayload(orderDto).build());
+        streamClient.output().send(MessageBuilder.withPayload("springcloudstream微服务测试").build());
         return "Success";
     }
 }
